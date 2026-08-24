@@ -1,0 +1,10 @@
+.view{
+    width: 1850px;
+    height: 900px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-attachment: fixed;
+    overflow: hidden;
+    border-radius: 40px;
+}
