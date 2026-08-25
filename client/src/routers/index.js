@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from 'vue-router'; // npm i vue-router
 
 // import Vue
 import Home from '../components/home/home.vue';
+import Home2 from '../components/home/home2.vue';
 
 const router = createRouter({
   history: createWebHistory(),
