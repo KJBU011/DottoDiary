@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mbc.dotto.dao.UsersDao">
+<!-- ========================== 회원가입 =========================== -->
+<insert id="addUsers" parameterType="com.mbc.dotto.dto.UsersDto">
+	insert into users
+	(id, pw, name, nick, hp, en_gr, auth)
+	values
+	(#{id}, #{pw}, #{name}, #{nick}, #{hp}, 0, 2)
+</insert>
+
+<!--아이디 중복체크-->
+<select id="getUsers" parameterType="String" resultType="boolean">
+	select count(*)
+	from users
+	where id = #{id}
+</select>
+
+<!-- ========================== 로그인 =========================== -->
+<select id="login" parameterType="com.mbc.dotto.dto.UsersDto" resultType="com.mbc.dotto.dto.UsersDto">
+	select id, name, nick, hp, en_gr, auth
+	from users
+	where id = #{id} 
+	  and pw = #{pw}
+</select>
+
+
+
+
+
+</mapper>
