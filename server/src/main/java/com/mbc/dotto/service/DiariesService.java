@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.mbc.dotto.dao.DiariesDao;
 import com.mbc.dotto.dto.DiariesDto;
 
-@Service
+@Service 
 @Transactional
 public class DiariesService {
 	

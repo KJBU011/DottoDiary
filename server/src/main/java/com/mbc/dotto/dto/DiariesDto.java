@@ -14,10 +14,10 @@ public class DiariesDto {
 	private int grNo;
 	
 	public DiariesDto() {
-		// TODO Auto-generated constructor stub 
+		// TODO 종이생성(dto) 생성자
 	}
 	
-	// using Fields
+	// using Fields 종이를 만들 때 값을 넣은 채로 만든다
 	public DiariesDto(String diNo, String id, Timestamp diDate, String diWeather, String diContent, String diTitle,
 			int diPublic, int grNo) {
 		super();
@@ -31,7 +31,7 @@ public class DiariesDto {
 		this.grNo = grNo;
 	}
 	
-	// Getters Setters
+	// Getters 빌려줌 Setters 설정해줘 시킴. 변수들을 통제하기 편하기 위해서
 	public String getDiNo() {
 		return diNo;
 	}
@@ -96,7 +96,7 @@ public class DiariesDto {
 		this.grNo = grNo;
 	}
 	
-	// toString
+	// toString @Override 상위
 	@Override
 	public String toString() {
 		return "DiariesDto [diNo=" + diNo + ", id=" + id + ", diDate=" + diDate + ", diWeather=" + diWeather
