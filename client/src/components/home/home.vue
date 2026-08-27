@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div class="home" :style="bgImg">
         <h1 class="home-text-h1">일기 마을에 오신 걸 환영해요</h1>
         <br/>
         <h2 class="home-text-h2">도토와 함께 오늘의 이야기를 기록해봐요</h2>
