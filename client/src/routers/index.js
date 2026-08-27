@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from 'vue-router'; // npm i vue-router@next
 
 // import Vue
+
 import home from '../components/home/home.vue';
 import growingcomment from '../components/growing/growingcomment.vue';
 import grouphome from '../components/grouphome/grouphome.vue';
