@@ -1,19 +1,31 @@
 <template>
-    <div class="gr-home">
+    <div class="gr-home"> 
         <div class="gr-info"> 
 
 
         </div>
 
         <div class="gr-nav">
-
+            <ul>
+                <li> 마을로 이동하기 </li>
+                <li v-on:click=""> 캘린더 </li>
+                <li v-on:click=""> ynz</li>
+                <li v-on:click="diaries"> 달빛전망대</li>
+                <li v-on:click="growinglist"> 쑥쑥 나무일지</li>
+            </ul>
 
         </div>
         <div class="gr-tree">
-
+            <img src="@/assets/Level1.png" alt="Level1" :class=bounce v-on:mouseover=img_on() v-if="grTier == 1" v-on:mouseleave=img_off()>
+            <img src="@/assets/Level2.png" alt="Level2" :class=bounce v-on:mouseover=img_on() v-if="grTier == 2" v-on:mouseleave=img_off()>
+            <img src="@/assets/Level3.png" alt="Level3" :class=bounce v-on:mouseover=img_on() v-show="tree3" v-on:mouseleave=img_off()>
+            <img src="@/assets/Level4.png" alt="Level4" :class=bounce v-on:mouseover=img_on() v-show="tree4" v-on:mouseleave=img_off()>
+            <img src="@/assets/Level5.png" alt="Level5" :class=bounce v-on:mouseover=img_on() v-show="tree5" v-on:mouseleave=img_off()>
 
         </div>
+
         <div class="gr-member">
+
 
         </div>
 
@@ -26,8 +38,32 @@
 </template>
 
 <script>
-export default{
+import Growingcomment from '../growing/growingcomment.vue';
 
+export default{
+    data() {
+        return {
+            bounce: "bounce-top",
+            tree1: true,
+            tree2: false,
+            tree3: false,
+            tree4: false,
+            tree5: false,
+            
+
+        }
+    },
+    mounted () {
+        this.bounce="none";
+    },
+    methods: {
+        img_on() {
+            this.bounce="bounce-top"
+        },
+        img_off(){
+            this.bounce="none";
+        }
+    },
 }
 </script>
 
@@ -56,22 +92,158 @@ export default{
 }
 
 .gr-nav{
-    width: 200px;
+    width: 300px;
     height:800px;
-    border: solid 2px;
-    background-color: aliceblue;
     float: right;
+    background-color: aliceblue;
     
-
 }
+
+
 
 .gr-tree{
     width:300px;
-    height:700px;
+    height:500px;    
+    margin: 170px 220px auto;
+    float: left; 
+}
+
+.gr-member{
+    width: 1500px;
+    height:200px;
     border: solid 2px;
     background-color: aliceblue;
-    margin: 30px auto;
+    margin-top: 600px;
+}
+
+img{
+    width: 350px;
+    height: 400px;
+    justify-content: center;
+    margin: 10px auto;
     
+}
+
+li{
+    
+    list-style-type: none;
+    font-size: 20pt;
+}
+
+ul{
+    margin-top: 100px;
+
+}
+
+
+.bounce-top {
+	-webkit-animation: bounce-top 0.9s backwards;
+	        animation: bounce-top 0.9s backwards;
+}
+
+@-webkit-keyframes bounce-top {
+  0% {
+    -webkit-transform: translateY(-45px);
+            transform: translateY(-45px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    -webkit-transform: translateY(-24px);
+            transform: translateY(-24px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  65% {
+    -webkit-transform: translateY(-12px);
+            transform: translateY(-12px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  82% {
+    -webkit-transform: translateY(-6px);
+            transform: translateY(-6px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  93% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+}
+@keyframes bounce-top {
+  0% {
+    -webkit-transform: translateY(-45px);
+            transform: translateY(-45px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    -webkit-transform: translateY(-24px);
+            transform: translateY(-24px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  65% {
+    -webkit-transform: translateY(-12px);
+            transform: translateY(-12px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  82% {
+    -webkit-transform: translateY(-6px);
+            transform: translateY(-6px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  93% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
 }
 
 </style>
