@@ -5,12 +5,12 @@ import java.sql.Timestamp;
 public class GrowingDto {
 	
 	//private 변수 생성 
-	 private int gwNo; 
-	 private String id; 
+	 private int gwNo; //그룹id 
+	 private String id; //id
 	 private Timestamp gwDate; //sql용 timestamp 
-	 private String gwContent;
-	 private int grNo;
-	 private int gwTier;
+	 private String gwContent; //댓글
+	 private int grNo; //그룹id 
+	 private int gwTier; //나무 등급 
 	 
 	 public GrowingDto() {
 		// TODO Auto-generated constructor stub
