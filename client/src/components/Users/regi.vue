@@ -13,7 +13,7 @@
                 <tr>
                     <th>아이디(필수)</th>
                     <td>
-                        <input v-model="id" @input="idRe" size="20" placeholder="아이디(필수)" />
+                        <input v-model="id" @input="sineUp" size="20" placeholder="아이디(필수)" />
                         <br/>
                     </td>
                     <td><input type="button" @click="idcheck" value="아이디 중복 확인" /></td>
@@ -21,7 +21,7 @@
                 <!-- 아이디 중복 문구 -->
                 <tr>
                     <td colspan="3">
-                        <p :style="idChk" style="font-size: 12px">{{  }}</p>
+                        <p :style="idChk" style="font-size: 12px">{{ idChkStr }}</p>
                     </td>
                 </tr>
                 <!-- 비밀번호 입력창 -->
@@ -93,19 +93,67 @@ export default {
 
     data() {
         return {
-            idChk: "",
-            idChkStr: "사용할 수 있는 아이디 입니다.",
-            iderr: false,
+            idChk: "",      // 아이디 중복 버튼 문구
+            idChkStr: "사용할 수 있는 아이디 입니다.",   // 아이디 중복 문구
+            iderr: false,   // 아이디 중복 검사 결과
 
-            pwChk: "",
-            pwStr: "비밀번호가 일치하지 않습니다.",
-            pwerr: false,
+            pwChk: "",      // 비밀번호 재확인 문구
+            pwStr: "비밀번호가 일치하지 않습니다.", // 비밀번호 재확인 문구
+            pwerr: false,   // 비밀번호 재확인 검사 결과
 
             id: "",         // 아이디
             pw: "",         // 비밀번호
             pwConfirm: "",  // 비밀번호 재확인
-            name: "",
-        }
+            name: "",       // 이름
+            nick: "",       // 닉네임
+            phone1: "010",          
+            phone2: "",
+            phone3: "",
+            phone:"",          // 핸프폰번호
+
+            auth: 2,
+
+            canRegi: false      // 회원가입 검사 결과
+        };
+    },
+    methods: {
+        // 아이디 중복 확인 버튼
+        idcheck() {
+            // 아이디 중복 확인 버튼
+            if (this.id !== null && this.id.trim() !== "") {
+                // 아이디를 파라미터로 DB에 접근
+                axios
+                    .post("http://localhost:5959/idcheck", null, { params: { id: this.id } })
+                    // 접근 성공시
+                    .then((resp) => {
+                        // 접근 확인용(확인 후 주석)
+                        alert(resp.data);
+
+                        // 중복되는 아이디가 있을 경우
+                        if (resp.data === true) {
+                            this.idChkStr = "사용할 수 없는 아이디 입니다.";   // 아이디 중복 문구 
+                            this.idChk = "display: block; color:red";       // 아이디 중복 문구 노출 색상
+                            this.iderr = false;                             // 아이디 중복 검사 결과
+                        }
+
+                        // 중복되는 아이디가 없을 경우
+                        else {
+                            this.idChkStr = "사용 가능한 아이디 입니다.";   // 아이디 사용 가능 문구 
+                            this.idChk = "display: block; color:blue";
+                            this.iderr = true;
+                        }
+                    })
+                    // 접근 실패 시
+                    .catch((err) => {
+                        alert(err);
+                    })
+            }
+        },
+        // 아이디 중복 검사 후 입력된 아이디를 변경한 경우
+        sineUp() {
+            this.iderr = false;
+        },
+        
     },
 }
 </script>
