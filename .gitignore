@@ -1,1 +1,58 @@
 /.metadata/
+# ==========================================
+# Operating System Files
+# ==========================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==========================================
+# IDE & Editor Settings
+# ==========================================
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Eclipse / STS
+.classpath
+.project
+.settings/
+.factorypath
+
+# ==========================================
+# Java & Maven
+# ==========================================
+*.class
+*.jar
+*.war
+*.ear
+
+# Build directories
+target/
+build/
+.mvn/
+mvnw
+mvnw.cmd
+
+# ==========================================
+# Node.js & Vue.js (Client)
+# ==========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vue build output
+dist/
+dist-ssr/
+
+# Local Environment & Sensitive Files
+.env.local
+.env.*.local
+
+# ==========================================
+# Application / Environment Config (Caution)
+# ==========================================
+# DB 비밀번호나 개인 설정을 포함한 파일은 추적 제외 권장
+server/src/main/resources/application.properties
