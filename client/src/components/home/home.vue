@@ -13,28 +13,15 @@
         <h2 class="home-text-h2">"훔쳐보는 일기가 제일 재밌다."</h2>
         <h2 class="home-text-h2-1">-도토-</h2>
         <br/>
-        <button class="home-btn"> &nbsp;▶ 도토가 훔쳐볼 일기 쓰러 가기 🍃</button>
+        <button class="home-btn" @click="btn_click"> &nbsp;▶ 도토가 훔쳐볼 일기 쓰러 가기 🍃</button>
     </div>
 </template>
 
 <script>
 export default {
-    // 변수 선언
-    data() {
-        return {
-            login : [],
-        }
-    },
-
-    // 실행 시 작동
-    mounted () {
-        let login = JSON.parse(sessionStorage.getItem('login'));
-
-        if(login !== null){
-            this.login = login
-
-        }
-    },
+    
+    
+  
 }
 </script>
 
