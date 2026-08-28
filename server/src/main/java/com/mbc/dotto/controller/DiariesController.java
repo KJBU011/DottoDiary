@@ -29,7 +29,7 @@ public class DiariesController {
 //	접근지정자 리턴값의 자료형     함수명 (매개변수자료형 매개변수의 변수명)
 		//  DiariesDto 가 Dto의 한줄이고 그것의 전체가 List 다
 		System.out.println("DiariesController diaryList()" + new Date());
-		List<DiariesDto>ab = service.diaryList(grNo);
-		return ab;
+		List<DiariesDto>dto = service.diaryList(grNo);
+		return dto;
 	}
 }
