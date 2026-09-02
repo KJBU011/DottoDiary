@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 패키지명과 일치 시키기  -->
+<mapper namespace="com.mbc.dotto.dao.GrowingDao"> 
+
+<!-- 성장일지 댓글 작성--> 
+<!--insert update delete의 경우 수정사항, 삭제사항 추가사항에 성공한 경우 1 실패한 경우에는 0으로 값을 리턴그래서 int로 돌려받는다 -->
+<insert id="GrowingContent" parameterType="com.mbc.dotto.dto.GrowingDto">
+	insert into growing(id, gw_date, gw_content, gr_no ,gw_tier)
+	values (#{id},now(),#{gwContent},#{grNo},#{gwTier})
+</insert>
+</mapper>
+
