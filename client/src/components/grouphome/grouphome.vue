@@ -1,7 +1,19 @@
 <template>
     <div class="gr-home"> 
         <div class="gr-info"> 
+         
+        <table id="grinfo_tb">
+                <tbody>
+                        <tr>
+                        <td>그룹 이름</td><td>{{grName}}</td>
+                        </tr>
+                        <tr>
+                        <td>그룹 레벨</td><td>{{grTier}}</td>      
+                        </tr>
 
+                </tbody>
+
+        </table>
 
         </div>
 
@@ -9,7 +21,7 @@
             <ul>
                 <li> 마을로 이동하기 </li>
                 <li v-on:click=""> 캘린더 </li>
-                <li v-on:click=""> ynz</li>
+                <li v-on:click=""> 숲속일기장</li>
                 <li v-on:click="diaries"> 달빛전망대</li>
                 <li v-on:click="growinglist"> 쑥쑥 나무일지</li>
             </ul>
@@ -43,6 +55,11 @@ import Growingcomment from '../growing/growingcomment.vue';
 export default{
     data() {
         return {
+        
+
+        temp_grNo:10,
+
+
             bounce: "bounce-top",
             tree1: true,
             tree2: false,
@@ -55,6 +72,8 @@ export default{
     },
     mounted () {
         this.bounce="none";
+  // 1. 페이지 로딩 중일때 axios 로 그룹 정보를  변수에 저장하는 함수 하나 만들기 
+
     },
     methods: {
         img_on() {
@@ -83,19 +102,36 @@ export default{
 
 .gr-info{
     width: 400px;
-    height: 100px;
-    border: solid 2px;
-    background-color: aliceblue;
+    height: 150px;
     float: left;
+    background-image: url('@/assets/groupinfo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    
    
     
 }
 
+#grinfo_tb{
+     margin: 50px 18px 50px 50px;
+     font-size: 17pt;
+     
+
+     
+     
+}
+
 .gr-nav{
-    width: 300px;
-    height:800px;
+    width: 400px;
+    height: 600px;
     float: right;
-    background-color: aliceblue;
+    background-image: url('@/assets/groupmenu.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    justify-items: center;
+    
     
 }
 

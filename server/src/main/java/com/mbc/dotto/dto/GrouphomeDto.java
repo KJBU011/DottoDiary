@@ -3,10 +3,10 @@ package com.mbc.dotto.dto;
 public class GrouphomeDto {
 	
 	
-	private int  grNo;
-	private  String grName;
+	private int grNo;
+	private String grName;
 	private String grLeader; 
-	private  int grCount;
+	private int grCount;
 	private int grMax;
 	private String grCode;
 	private String grTree;

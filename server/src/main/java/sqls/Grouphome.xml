@@ -3,4 +3,14 @@
 
 <mapper namespace="com.mbc.dotto.dao.GrouphomeDao"> 
 
+
+<!--그룹 정보 불러오기 -->
+<select id="GetGroup" parameterType="int" resultType="com.mbc.dotto.dto.GrouphomeDto">
+select  gr_no, gr_name, gr_leader, gr_count, gr_max, gr_code, gr_tree, gr_tier
+from groups
+where gr_no = #{grNo}
+</select>
+
+
+
 </mapper>

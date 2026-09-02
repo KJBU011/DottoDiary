@@ -4,7 +4,7 @@ import { createWebHistory, createRouter } from 'vue-router'; // npm i vue-router
 
 import home from '../components/home/home.vue';
 import growingcomment from '../components/growing/growingcomment.vue';
-import grouphome from '../components/grouphome/grouphome.vue';
+import grouphome from '@/components/grouphome/grouphome.vue';
 import regi from '@/components/Users/regi.vue';
 import login from '@/components/Users/login.vue';
 import diarieslist from '../components/DiariesList/DiariesList.vue';
