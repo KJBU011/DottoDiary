@@ -2,7 +2,8 @@ package com.mbc.dotto.dto;
 
 public class GrouphomeDto {
 	
-	
+	private String id;
+	private String nick; 
 	private int grNo;
 	private String grName;
 	private String grLeader; 
@@ -16,9 +17,11 @@ public class GrouphomeDto {
 		// TODO Auto-generated constructor stub
 	}
 
-	public GrouphomeDto(int grNo, String grName, String grLeader, int grCount, int grMax, String grCode, String grTree,
-			int grTier) {
+	public GrouphomeDto(String id, String nick, int grNo, String grName, String grLeader, int grCount, int grMax,
+			String grCode, String grTree, int grTier) {
 		super();
+		this.id = id;
+		this.nick = nick;
 		this.grNo = grNo;
 		this.grName = grName;
 		this.grLeader = grLeader;
@@ -27,6 +30,22 @@ public class GrouphomeDto {
 		this.grCode = grCode;
 		this.grTree = grTree;
 		this.grTier = grTier;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getNick() {
+		return nick;
+	}
+
+	public void setNick(String nick) {
+		this.nick = nick;
 	}
 
 	public int getGrNo() {
@@ -95,9 +114,13 @@ public class GrouphomeDto {
 
 	@Override
 	public String toString() {
-		return "GroupehomeDto [grNo=" + grNo + ", grName=" + grName + ", grLeader=" + grLeader + ", grCount=" + grCount
-				+ ", grMax=" + grMax + ", grCode=" + grCode + ", grTree=" + grTree + ", grTier=" + grTier + "]";
+		return "GrouphomeDto [id=" + id + ", nick=" + nick + ", grNo=" + grNo + ", grName=" + grName + ", grLeader="
+				+ grLeader + ", grCount=" + grCount + ", grMax=" + grMax + ", grCode=" + grCode + ", grTree=" + grTree
+				+ ", grTier=" + grTier + "]";
 	}
+	
+	
+
 	
 
 }

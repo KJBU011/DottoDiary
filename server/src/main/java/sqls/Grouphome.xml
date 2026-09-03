@@ -6,9 +6,9 @@
 
 <!--그룹 정보 불러오기 -->
 <select id="GetGroup" parameterType="int" resultType="com.mbc.dotto.dto.GrouphomeDto">
-select  gr_no, gr_name, gr_leader, gr_count, gr_max, gr_code, gr_tree, gr_tier
-from groups
-where gr_no = #{grNo}
+select u.id, u.nick, g.gr_no, gr_name, gr_leader, gr_count, gr_max, gr_code, gr_tree, gr_tier
+from users u, members m, groups g
+where u.id = m.id and m.gr_no = g.gr_no and g.gr_no = #{grNo}
 </select>
 
 

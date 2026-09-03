@@ -1,5 +1,7 @@
 package com.mbc.dotto.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,7 +23,7 @@ public class GrouphomeService {
 		}
 	
 		//그룹정보 가져오기 
-		public GrouphomeDto GetGroup(int grNo) {
+		public List<GrouphomeDto> GetGroup(int grNo) {
 			return dao.GetGroup(grNo);
 		}
 		

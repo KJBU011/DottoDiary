@@ -1,6 +1,7 @@
 package com.mbc.dotto.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +21,7 @@ public class GrouphomeController {
 	  
 	  //그룹 정보 가져오기 
 	  @PostMapping("groupHome")
-	  public GrouphomeDto GetGroup(int grNo) {
+	  public List<GrouphomeDto> GetGroup(int grNo) {
 		  
 		  System.out.println("GrouphomeController GetGroup" +new Date());
 		  
