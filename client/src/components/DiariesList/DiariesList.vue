@@ -13,8 +13,8 @@
             </div>
             <div class="diarieslist-main">
                 <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                    <p class="all">지금까지 쓴 일기들:</p>
-                    <button class="write">일기쓰기</button>
+                    <p class="all">우리가 쓴 일기: 총  _개</p>
+                    <button class="write">일기 쓰러 가자</button>
                 </div>
 
                 <div>
